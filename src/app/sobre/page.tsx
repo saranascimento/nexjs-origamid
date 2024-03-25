@@ -1,11 +1,8 @@
-import Width from '@/components/width';
-import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 
-export const metadata: Metadata = {
-  title: 'sobre',
-  description: 'Essa é a página sobre',
-};
-
+export const Width = dynamic(() => import('@/components/width'), {
+  ssr: false,
+});
 export default function SobrePage() {
   return (
     <main>
